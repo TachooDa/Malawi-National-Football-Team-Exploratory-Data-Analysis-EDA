@@ -36,7 +36,7 @@ Proyek ini menggunakan **query SQL** dan **Common Table Expressions (CTE)** untu
 (https://github.com/TachooDa/Malawi-National-Football-Team---Exploratory-Data-Analysis-EDA-/blob/main/SQL-File/eda_malawi.sql)
 ## 📈 Insight Utama
 
-- **Performa Kandang vs Tandang:** Malawi cenderung lebih baik saat bermain di Venue Unknown (Netral).
+- **Performa Kandang vs Tandang:** Malawi cenderung lebih baik saat bermain di Venue Home (Kandang) dengan total kemenangan sebanyak `10`.
 - **Lawan Tersulit:** Berdasarkan selisih skor, lawan paling menyulitkan adalah [Ghana] dengan total selisih negatif terbesar [`-14`].
 - **Tahun Terbaik:** Tahun [`1968 dan 2017`] menunjukkan rasio kemenangan tertinggi `100%`.
 - **Kompetisi Terfavorit:** Kompetisi dengan jumlah pertandingan terbanyak adalah ['World Cup Qualifier' dan 'AFCON Qualifier'] dengan total pertandingan masing-masing `18` match.
