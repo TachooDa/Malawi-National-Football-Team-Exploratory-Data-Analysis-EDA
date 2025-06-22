@@ -1,7 +1,3 @@
-🔥 [Temukan query untuk insight dibawah ini] :
-(https://github.com/TachooDa/Malawi-National-Football-Team-Exploratory-Data-Analysis-EDA/blob/main/SQL-File/eda_malawi.sql)
-
----
 
 ## 📊 EDA & Insight
 
