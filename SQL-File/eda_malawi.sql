@@ -1,54 +1,70 @@
 select * from malawi_staging2;
+
 -- 1. tren kemenangan waktu->waktu
 select YEAR(`Date`) as year, `Result`, count(*) as total 
 from malawi_staging2
 group by YEAR(`Date`), `Result`
 order by year asc;
+
 -- 2. Performa berdasarkan lawan 
 select `Opponent`, `Result`,count(*) as total
 from malawi_staging2
 group by `Opponent`, `Result`
 order by `Opponent`;
+
 -- 3. Skor rata-rata berdasarkan venue
 select `Venue`,
 round(avg(`Team Score`),0) as avg_teamscore,
 round(avg(`Opponent Score`),0) as avg_oppscore
 from malawi_staging2
 group by `Venue`;
--- 4. value per kompetisi
+
+-- 4. Cek total hasil kemenangan per venue
+select `Venue`, `Result`, count(*) as hasil_pertandingan
+from malawi_staging2
+where `Venue` in ('Home','Away','Unknown') and `Result` = 'Win'
+group by `Venue`,`Result`
+order by hasil_pertandingan desc;
+
+-- 5. value per kompetisi
 select `Competition` , `Result`, count(*) as total
 from malawi_staging2
 group by `Competition`, `Result`
 order by `Competition` asc;
--- 5. Selisih skor vs lawan
+-- 6. Selisih skor vs lawan
 select * from malawi_staging2;
 select `Opponent`, `Team Score`, `Opponent Score`,
 (`Team Score` - `Opponent Score`) as selisih
 from malawi_staging2
 order by selisih desc;
--- 6. Konsistensi skor dari tahun -> tahun
+
+-- 7. Konsistensi skor dari tahun -> tahun
 select year(`Date`) as year,
 round(avg(`Team Score`),0) as gol_rata2_team,
 round(avg(`Opponent Score`),0) as gol_rata2_lawan
 from malawi_staging2
 group by year(`Date`)
 order by year;
--- 7. frekuensi pertandingan berdasarkan venue
+
+-- 8. frekuensi pertandingan berdasarkan venue
 select `Venue`, count(*) as total_pertandingan
 from malawi_staging2
 group by `Venue`
 order by total_pertandingan desc;
--- 8. pertandingan berdasarkan dekade
+
+-- 9. pertandingan berdasarkan dekade
 select concat(floor(year(`Date`)/10)*10) as dekade
 from malawi_staging2
 group by dekade
 order by dekade;
--- 9. Distribusi jenis kompetisi
+
+-- 10. Distribusi jenis kompetisi
 select `Competition`, count(*) as total_main
 from malawi_staging2
 group by `Competition`
 order by total_main desc;
--- 10. Lawan terkuat & terlemah berdasarkan skor
+
+-- 11. Lawan terkuat & terlemah berdasarkan skor
 select `Opponent`, 
 sum(`Team Score`) as tot_team_score,
 sum(`Opponent Score`) as tot_opp_score,
@@ -56,12 +72,14 @@ sum(`Team Score` - `Opponent Score`) as tot_selisih
 from malawi_staging2
 group by `Opponent`
 order by tot_selisih asc;
--- 11. Top 5 Lawan yang sering dihadapi 
+
+-- 12. Top 5 Lawan yang sering dihadapi 
 select `Opponent`,count(*) as jumlah_pertandingan
 from malawi_staging2
 group by `Opponent`
 order by jumlah_pertandingan desc
 limit 5;
+
 
 -- CTE EDA Section
 -- 1.  match terbaru per lawan
