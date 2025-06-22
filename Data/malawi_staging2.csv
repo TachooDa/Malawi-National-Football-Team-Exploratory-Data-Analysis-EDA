@@ -1,1 +1,73 @@
-
+Date,Opponent,"Team Score","Opponent Score",Result,Venue,Competition
+1957-01-01,"Northern Rhodesia",0,5,Loss,Unknown,"Friendly (First International)"
+1962-01-01,Ghana,0,12,Loss,Unknown,Friendly
+1968-01-01,Botswana,8,1,Win,Unknown,Friendly
+2025-03-02,Comoros,2,0,Win,Away,Friendly
+1996-06-02,"South Africa",0,3,Loss,Away,"World Cup Qualifier"
+2012-06-02,Kenya,0,0,Draw,Away,"World Cup Qualifier"
+2021-09-03,Cameroon,0,2,Loss,Away,"World Cup Qualifier"
+2010-09-04,Tunisia,2,2,Draw,Away,"AFCON Qualifier"
+2022-09-04,Mozambique,0,0,Draw,Away,"CHAN Qualifier"
+2013-06-05,Namibia,0,0,Draw,Away,"World Cup Qualifier"
+2022-06-05,Ethiopia,2,1,Win,Home,"AFCON Qualifier"
+2024-06-06,"Sao Tome",3,1,Win,Home,"World Cup Qualifier"
+2022-07-06,Lesotho,1,2,Loss,Away,"COSAFA Cup"
+2015-09-06,Eswatini,2,2,Draw,Home,"AFCON Qualifier"
+1996-07-07,Zambia,1,1,Draw,Home,Friendly
+2013-09-07,Nigeria,0,2,Loss,Away,"World Cup Qualifier"
+2021-09-07,Mozambique,1,0,Win,Home,"World Cup Qualifier"
+2016-10-07,Ghana,0,0,Draw,Away,"World Cup Qualifier"
+2010-01-08,Algeria,0,3,Loss,Away,"AFCON 2010 Group Stage"
+2022-07-08,Eswatini,1,1,Draw,Home,"COSAFA Cup"
+2012-09-08,Ghana,0,1,Loss,Away,"AFCON Qualifier"
+2018-09-08,Morocco,0,3,Loss,Away,"AFCON Qualifier"
+2021-10-08,"Cote d'Ivoire",0,3,Loss,Home,"World Cup Qualifier"
+2012-06-09,Nigeria,0,2,Loss,Home,"World Cup Qualifier"
+2022-06-09,Guinea,0,1,Loss,Away,"AFCON Qualifier"
+2021-07-09,Zimbabwe,2,2,Draw,Home,"COSAFA Cup"
+2023-09-09,Guinea,2,2,Draw,Home,"AFCON Qualifier"
+2010-10-09,Chad,6,2,Win,Home,"AFCON Qualifier"
+2022-01-10,Guinea,0,1,Loss,Away,"AFCON 2021 Group Stage"
+2017-06-10,Comoros,1,0,Win,Home,"AFCON Qualifier"
+2024-06-10,"Eq. Guinea",0,1,Loss,Away,"World Cup Qualifier"
+2022-07-10,Mauritius,2,0,Win,Away,"COSAFA Cup"
+2024-09-10,"Burkina Faso",3,0,Win,Home,"AFCON 2025 Qualifier"
+2010-01-11,Angola,0,2,Loss,Away,"AFCON 2010 Group Stage"
+2021-07-11,Mozambique,0,2,Loss,Away,"COSAFA Cup"
+2021-10-11,"Cote d'Ivoire",1,2,Loss,Away,"World Cup Qualifier"
+2024-10-11,Senegal,0,4,Loss,Away,"AFCON 2025 Qualifier"
+2011-11-11,Kenya,0,0,Draw,Away,Friendly
+2013-06-12,Kenya,2,2,Draw,Home,"World Cup Qualifier"
+2020-11-12,"Burkina Faso",1,3,Loss,Away,"AFCON Qualifier"
+2021-06-13,Tanzania,0,2,Loss,Away,Friendly
+2021-07-13,Namibia,1,1,Draw,Home,"COSAFA Cup"
+2012-10-13,Ghana,0,1,Loss,Home,"AFCON Qualifier"
+2021-11-13,Cameroon,0,4,Loss,Home,"World Cup Qualifier"
+2010-01-14,Mali,1,3,Loss,Away,"AFCON 2010 Group Stage"
+2022-01-14,Zimbabwe,2,1,Win,Home,"AFCON 2021 Group Stage"
+2023-06-14,Mozambique,1,1,Draw,Away,"Four Nations Tournament"
+2021-07-14,Senegal,1,2,Loss,Away,"COSAFA Cup"
+2024-11-14,Burundi,0,0,Draw,Home,"AFCON 2025 Qualifier"
+2023-03-15,Bangladesh,1,1,Draw,Away,Friendly
+2015-06-15,Egypt,1,2,Loss,Away,"AFCON Qualifier"
+2018-10-16,Cameroon,0,0,Draw,Home,"AFCON Qualifier"
+2020-11-16,"Burkina Faso",0,0,Draw,Home,"AFCON Qualifier"
+2021-11-16,Mozambique,0,1,Loss,Away,"World Cup Qualifier"
+2021-03-17,Ethiopia,0,4,Loss,Away,Friendly
+2010-11-17,Rwanda,2,1,Win,Home,Friendly
+2023-11-17,Liberia,0,1,Loss,Away,"World Cup Qualifier"
+2022-01-18,Senegal,0,0,Draw,Home,"AFCON 2021 Group Stage"
+2024-11-18,"Burkina Faso",0,1,Loss,Away,"AFCON 2025 Qualifier"
+2025-03-20,Namibia,0,1,Loss,Away,"World Cup Qualifier"
+2023-06-20,Ethiopia,0,0,Draw,Home,"AFCON Qualifier"
+2023-11-21,Tunisia,1,0,Win,Home,"World Cup Qualifier"
+2024-03-23,Senegal,0,1,Loss,Away,Friendly
+2021-03-24,"South Sudan",1,0,Win,Away,"AFCON Qualifier"
+2023-03-24,Egypt,0,2,Loss,Away,"AFCON Qualifier"
+2022-01-25,Morocco,1,2,Loss,Away,"AFCON 2021 Round of 16"
+2023-02-25,Lesotho,1,1,Draw,Home,Friendly
+2024-03-26,Kenya,0,4,Loss,Home,"Four Nations Tournament"
+2022-08-27,Mozambique,1,1,Draw,Home,"CHAN Qualifier"
+2023-03-28,Egypt,0,4,Loss,Home,"AFCON Qualifier"
+2021-03-29,Uganda,1,0,Win,Home,"AFCON Qualifier (Qualified)"
+2021-12-31,Comoros,1,0,Win,Away,Friendly
