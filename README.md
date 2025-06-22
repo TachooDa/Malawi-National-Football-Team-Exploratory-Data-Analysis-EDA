@@ -1,4 +1,16 @@
 # Malawi National Football Team  Exploratory Data Analysis (EDA)
+
+---
+
+## 📌 Project Overview
+
+Proyek ini bertujuan untuk mengeksplorasi performa tim nasional sepak bola Malawi dengan menggunakan SQL. Analisis dilakukan terhadap data pertandingan historis untuk memahami tren kemenangan, produktivitas gol, kekuatan lawan, serta distribusi pertandingan berdasarkan lokasi (venue), jenis kompetisi, dan periode waktu (tahun atau dekade).
+
+Proyek ini menggunakan **query SQL** dan **Common Table Expressions (CTE)** untuk menggali insight dari dataset `malawi_staging2`.
+
+---
+
+
 ## 📁 Dataset
 
 - **Nama Tabel:** `malawi_staging2`
@@ -82,12 +94,11 @@ Menyajikan total pertandingan per dekade untuk melihat tren partisipasi.
 
 ## ⚙️ Tools & Teknologi
 
-- SQL (dijalankan di [MySQL / SQLite / BigQuery / lainnya])
-- Visualisasi opsional (misalnya menggunakan Tableau, Power BI, atau spreadsheet)
-- Data preprocessing dilakukan pada tabel `malawi_staging2`
+- SQL (MySQL / SQLite / BigQuery)
+- EDA berbasis query dan CTE
+- Data preprocessing dilakukan di tahap `malawi_staging2`
 ---
 
-## 📌 Penutup
+## 📄 Lisensi
 
-EDA ini memberikan pemahaman mendalam mengenai perjalanan performa tim nasional Malawi dalam sepak bola internasional. 
-Insight yang diperoleh dapat dijadikan landasan strategi, pelatihan, atau evaluasi performa jangka panjang.
+Proyek ini bersifat edukatif dan terbuka untuk pengembangan lebih lanjut. Silakan gunakan dan modifikasi sesuai kebutuhan.
