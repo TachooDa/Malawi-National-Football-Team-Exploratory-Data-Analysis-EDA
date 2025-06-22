@@ -65,7 +65,7 @@ Menyajikan total pertandingan per dekade untuk melihat tren partisipasi.
 
 ---
 📌 [Lihat query lengkap di] :
-()
+(https://github.com/TachooDa/Malawi-National-Football-Team---Exploratory-Data-Analysis-EDA-/blob/main/SQL-File/eda_malawi.sql)
 ## 📈 Insight Utama
 
 - **Performa Kandang vs Tandang:** Malawi cenderung lebih baik saat bermain di Venue Unknown (Netral).
