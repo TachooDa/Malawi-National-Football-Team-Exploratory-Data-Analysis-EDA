@@ -1,0 +1,80 @@
+# 📊 Analisis Performa Tim Nasional Malawi
+## Insight & Metodologi Penelitian
+
+---
+
+## 🎯 **ANALISIS EKSPLORATORI DATA (EDA)**
+
+### **A. Analisis Temporal**
+#### 1. **Tren Performa Historis**
+Menganalisis pola kemenangan, kekalahan, dan hasil seri dari tahun ke tahun untuk mengidentifikasi periode emas dan masa transisi tim nasional Malawi.
+
+#### 2. **Konsistensi Skor Tahunan**
+Evaluasi produktivitas menyerang dan kekuatan pertahanan tim berdasarkan rata-rata gol yang dicetak dan kebobolan per tahun.
+
+#### 3. **Distribusi Pertandingan per Dekade**
+Analisis volume aktivitas tim nasional dari dekade ke dekade (1980-an, 1990-an, 2000-an, dst.) untuk memahami tingkat partisipasi internasional.
+
+### **B. Analisis Berdasarkan Lawan**
+#### 4. **Profil Performa vs Setiap Lawan**
+Identifikasi tim lawan yang sering dikalahkan versus tim yang menjadi momok bagi Malawi, berdasarkan head-to-head record.
+
+#### 5. **Top 5 Lawan Tersering**
+Berdasarkan frekuensi pertemuan:
+- **Mozambique** (5 pertandingan)
+- **Ghana** (4 pertandingan)  
+- **Kenya** (4 pertandingan)
+- **Burkina Faso** (4 pertandingan)
+- **Senegal** (4 pertandingan)
+
+#### 6. **Klasifikasi Lawan Berdasarkan Tingkat Kesulitan**
+Ranking lawan dari yang paling sulit hingga termudah berdasarkan selisih gol kumulatif dan persentase kemenangan.
+
+### **C. Analisis Venue & Kompetisi**
+#### 7. **Performa Kandang vs Tandang**
+Perbandingan statistik menang-seri-kalah dan rata-rata skor ketika bermain di kandang (`Home`) versus tandang (`Away`).
+
+#### 8. **Distribusi Berdasarkan Venue**
+Identifikasi venue yang paling sering digunakan tim Malawi untuk pertandingan kandang.
+
+#### 9. **Performa per Jenis Kompetisi**
+Evaluasi tingkat keberhasilan di berbagai turnamen: kualifikasi Piala Dunia, Piala Afrika, pertandingan persahabatan, dll.
+
+#### 10. **Dominasi Jenis Kompetisi**
+Analisis distribusi partisipasi Malawi berdasarkan kategori kompetisi yang paling sering diikuti.
+
+---
+
+## 🧠 **ANALISIS LANJUTAN DENGAN CTE**
+*Common Table Expression untuk Insight Mendalam*
+
+### **A. Analisis Komprehensif per Lawan**
+#### 1. **Performa Terkini vs Setiap Lawan**
+Menggunakan CTE untuk mengidentifikasi hasil pertandingan terakhir melawan masing-masing tim lawan, memberikan gambaran momentum terkini.
+
+#### 2. **Peringkat Definitif Lawan Tersulit**
+Ranking sistematis berdasarkan multiple metrics: total selisih gol, win rate, dan average goals conceded per match.
+
+### **B. Analisis Efisiensi Temporal**
+#### 3. **Metrik Performa Tahunan**
+Perhitungan persentase kemenangan, rata-rata gol per pertandingan, dan consistency index untuk setiap tahun aktif.
+
+#### 4. **Tren Dekadal Komprehensif**  
+Agregasi data per dekade dengan breakdown: total pertandingan, win rate, goal difference ratio, dan tingkat aktivitas internasional.
+
+### **C. Analisis Komparatif Venue**
+#### 5. **Benchmark Kandang vs Tandang**
+Perbandingan eksplisit semua metrik performa (skor rata-rata, clean sheets, comeback wins) antara pertandingan kandang dan tandang.
+
+---
+
+## 📈 **DELIVERABLE INSIGHTS**
+Setiap analisis menghasilkan insight actionable untuk:
+- **Perencanaan strategis** tim nasional
+- **Identifikasi kekuatan dan kelemahan** historis  
+- **Prediksi performa** berdasarkan pola masa lalu
+- **Optimasi preparation** untuk lawan-lawan spesifik
+
+---
+
+*Metodologi ini memungkinkan pemahaman holistik tentang performa tim nasional Malawi dari berbagai dimensi: temporal, kompetitif, geografis, dan tactical.*
