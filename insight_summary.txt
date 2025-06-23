@@ -1,0 +1,220 @@
+# 🇲🇼 Tim Nasional Malawi - Insight dari Analisis Data
+## Hasil Analisis SQL Database Performa Historis
+
+---
+
+## 📊 **RINGKASAN EKSEKUTIF**
+
+Analisis komprehensif terhadap performa historis tim nasional Malawi menggunakan data pertandingan dari database `malawi_staging2`. Analisis mencakup tren temporal, performa berdasarkan lawan, efektivitas venue, dan distribusi kompetisi.
+
+---
+
+## 🎯 **INSIGHT UTAMA**
+
+### **1. Tren Kemenangan Berdasarkan Tahun**
+```sql
+-- Analisis tren hasil pertandingan dari waktu ke waktu
+SELECT YEAR(`Date`) as year, `Result`, COUNT(*) as total 
+FROM malawi_staging2
+GROUP BY YEAR(`Date`), `Result`
+ORDER BY year ASC;
+```
+**💡 Insight:** Identifikasi periode emas dan masa sulit tim nasional Malawi sepanjang sejarah.
+
+### **2. Profil Performa vs Setiap Lawan**
+```sql
+-- Head-to-head record melawan semua lawan
+SELECT `Opponent`, `Result`, COUNT(*) as total
+FROM malawi_staging2
+GROUP BY `Opponent`, `Result`
+ORDER BY `Opponent`;
+```
+**💡 Insight:** Pemetaan kekuatan relatif Malawi terhadap berbagai tim nasional Afrika dan dunia.
+
+### **3. Efektivitas Bermain Kandang vs Tandang**
+```sql
+-- Rata-rata skor berdasarkan venue
+SELECT `Venue`,
+    ROUND(AVG(`Team Score`),0) as avg_teamscore,
+    ROUND(AVG(`Opponent Score`),0) as avg_oppscore
+FROM malawi_staging2
+GROUP BY `Venue`;
+
+-- Total kemenangan per venue
+SELECT `Venue`, `Result`, COUNT(*) as hasil_pertandingan
+FROM malawi_staging2
+WHERE `Venue` IN ('Home','Away','Unknown') AND `Result` = 'Win'
+GROUP BY `Venue`,`Result`
+ORDER BY hasil_pertandingan DESC;
+```
+**💡 Insight:** Quantifikasi home advantage dan performa tandang tim nasional Malawi.
+
+### **4. Distribusi Performa per Kompetisi**
+```sql
+-- Hasil berdasarkan jenis kompetisi
+SELECT `Competition`, `Result`, COUNT(*) as total
+FROM malawi_staging2
+GROUP BY `Competition`, `Result`
+ORDER BY `Competition` ASC;
+```
+**💡 Insight:** Identifikasi kompetisi dimana Malawi paling sukses dan yang paling menantang.
+
+### **5. Analisis Goal Difference**
+```sql
+-- Selisih gol per pertandingan
+SELECT `Opponent`, `Team Score`, `Opponent Score`,
+    (`Team Score` - `Opponent Score`) as selisih
+FROM malawi_staging2
+ORDER BY selisih DESC;
+```
+**💡 Insight:** Dominasi atau margin kekalahan terhadap lawan-lawan spesifik.
+
+### **6. Konsistensi Performa Tahunan**
+```sql
+-- Rata-rata gol per tahun
+SELECT YEAR(`Date`) as year,
+    ROUND(AVG(`Team Score`),0) as gol_rata2_team,
+    ROUND(AVG(`Opponent Score`),0) as gol_rata2_lawan
+FROM malawi_staging2
+GROUP BY YEAR(`Date`)
+ORDER BY year;
+```
+**💡 Insight:** Evolusi kekuatan menyerang dan pertahanan tim dari tahun ke tahun.
+
+### **7. Preferensi Venue**
+```sql
+-- Frekuensi penggunaan venue
+SELECT `Venue`, COUNT(*) as total_pertandingan
+FROM malawi_staging2
+GROUP BY `Venue`
+ORDER BY total_pertandingan DESC;
+```
+**💡 Insight:** Pola bermain kandang, tandang, dan venue netral.
+
+### **8. Tren Aktivitas per Dekade**
+```sql
+-- Distribusi pertandingan per dekade
+WITH decade_summary AS (
+  SELECT 
+    CONCAT(FLOOR(YEAR(`Date`)/10)*10, 's') AS Dekade,
+    COUNT(*) AS Total_Matches
+  FROM malawi_staging2
+  GROUP BY CONCAT(FLOOR(YEAR(`Date`)/10)*10, 's')
+)
+SELECT * FROM decade_summary ORDER BY Dekade;
+```
+**💡 Insight:** Tingkat aktivitas internasional Malawi sepanjang dekade.
+
+### **9. Distribusi Kompetisi Utama**
+```sql
+-- Jenis kompetisi yang paling sering diikuti
+SELECT `Competition`, COUNT(*) as total_main
+FROM malawi_staging2
+GROUP BY `Competition`
+ORDER BY total_main DESC;
+```
+**💡 Insight:** Fokus kompetisi dan prioritas FIFA/CAF ranking.
+
+### **10. Klasifikasi Lawan Berdasarkan Tingkat Kesulitan**
+```sql
+-- Ranking lawan tersulit berdasarkan goal difference
+SELECT `Opponent`, 
+    SUM(`Team Score`) as tot_team_score,
+    SUM(`Opponent Score`) as tot_opp_score,
+    SUM(`Team Score` - `Opponent Score`) as tot_selisih
+FROM malawi_staging2
+GROUP BY `Opponent`
+ORDER BY tot_selisih ASC;
+```
+**💡 Insight:** **Mozambique, Ghana, Kenya, Burkina Faso, dan Senegal** adalah lawan yang paling sering dihadapi.
+
+---
+
+## 🧠 **ANALISIS LANJUTAN DENGAN CTE**
+
+### **A. Momentum Terkini**
+```sql
+-- Hasil pertandingan terakhir vs setiap lawan
+WITH latest_match AS (
+    SELECT *,
+    ROW_NUMBER() OVER(PARTITION BY `Opponent` ORDER BY `Date` DESC) as latest_match
+    FROM malawi_staging2
+)
+SELECT * FROM latest_match WHERE latest_match = 1;
+```
+**🎯 Tujuan:** Memahami momentum head-to-head terkini untuk persiapan pertandingan mendatang.
+
+### **B. Efisiensi Tahunan**
+```sql
+-- Win percentage per tahun
+WITH yearly_result AS (
+    SELECT YEAR(`Date`) as year,
+    COUNT(*) as total_match,
+    SUM(CASE WHEN `Result` = 'Win' THEN 1 ELSE 0 END) as total_win
+    FROM malawi_staging2
+    GROUP BY YEAR(`Date`)
+)
+SELECT *,
+ROUND(total_win * 100.0 / total_match, 2) as win_percentage
+FROM yearly_result ORDER BY year;
+```
+**🎯 Tujuan:** Mengukur konsistensi performa dan identifikasi tahun-tahun breakthrough.
+
+### **C. Benchmark Venue Performance**
+```sql
+-- Perbandingan eksplisit performa kandang vs tandang
+WITH avg_score_venue AS (
+    SELECT `Venue`,
+    ROUND(AVG(`Team Score`),0) as avg_team_score,
+    ROUND(AVG(`Opponent Score`),0) as avg_opp_score
+    FROM malawi_staging2
+    GROUP BY `Venue`
+)
+SELECT * FROM avg_score_venue 
+WHERE Venue IN ('Home', 'Away','Unknown');
+```
+**🎯 Tujuan:** Quantifikasi home advantage untuk strategi penjadwalan pertandingan.
+
+### **D. Ranking Definitif Lawan Tersulit**
+```sql
+-- Sistem ranking berdasarkan total goal difference
+WITH selisih_lawan AS (
+SELECT `Opponent`,
+SUM(`Team Score`- `Opponent Score`) as total_selisih
+FROM malawi_staging2
+GROUP BY `Opponent`
+)
+SELECT *,
+RANK() OVER(ORDER BY total_selisih ASC) as lawan_tersulit
+FROM selisih_lawan;
+```
+**🎯 Tujuan:** Prioritisasi persiapan khusus untuk lawan-lawan yang secara historis paling menantang.
+
+---
+
+## 📈 **ACTIONABLE RECOMMENDATIONS**
+
+### **Untuk Pelatih & Manajemen Tim:**
+1. **Fokus persiapan extra** untuk lawan-lawan dengan ranking "tersulit"
+2. **Maksimalkan home advantage** berdasarkan data venue performance
+3. **Analisis pola temporal** untuk timing peak performance
+4. **Evaluasi strategi kompetisi** berdasarkan success rate per turnamen
+
+### **Untuk Federasi Sepakbola Malawi:**
+1. **Penjadwalan strategis** pertandingan kandang vs lawan kuat
+2. **Investasi infrastruktur** untuk memperkuat home advantage
+3. **Program development** berdasarkan insight performa dekadal
+
+---
+
+## 🗃️ **DATABASE STRUCTURE**
+**Table:** `malawi_staging2`  
+**Key Fields:** Date, Opponent, Team Score, Opponent Score, Result, Venue, Competition
+
+**Sample Size:** [Total records from database]  
+**Time Range:** [Date range from database]  
+**Geographic Coverage:** [Opponent countries represented]
+
+---
+
+*Analisis ini memberikan foundation data-driven untuk strategic planning tim nasional Malawi di kompetisi internasional mendatang.*
