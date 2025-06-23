@@ -211,10 +211,6 @@ FROM selisih_lawan;
 **Table:** `malawi_staging2`  
 **Key Fields:** Date, Opponent, Team Score, Opponent Score, Result, Venue, Competition
 
-**Sample Size:** [Total records from database]  
-**Time Range:** [Date range from database]  
-**Geographic Coverage:** [Opponent countries represented]
-
 ---
 
 *Analisis ini memberikan foundation data-driven untuk strategic planning tim nasional Malawi di kompetisi internasional mendatang.*
