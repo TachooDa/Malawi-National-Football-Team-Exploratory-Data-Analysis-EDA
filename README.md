@@ -122,7 +122,7 @@ ORDER BY total_pertandingan DESC;
 
 ---
 
-## 🎯 Pengembangan Masa Depan
+## 🎯 Pengembangan Lanjutan
 
 - [ ] Menambahkan komponen visualisasi data
 - [ ] Implementasi predictive modeling
@@ -148,5 +148,3 @@ Proyek ini bertujuan edukatif dan terbuka untuk pengembangan lebih lanjut. Silak
 Untuk pertanyaan atau saran, silakan [buka issue](https://github.com/TachooDa/Malawi-National-Football-Team-Exploratory-Data-Analysis-EDA/issues) atau hubungi melalui GitHub.
 
 ---
-
-*Terakhir Diperbarui: [Masukkan tanggal]*
