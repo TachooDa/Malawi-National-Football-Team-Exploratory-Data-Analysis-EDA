@@ -115,7 +115,7 @@ Analisis memanfaatkan **query SQL** dan **Common Table Expressions (CTE)** untuk
 -- Contoh: Performa Kandang vs Tandang
 SELECT Venue, Result, COUNT(*) as total_pertandingan
 FROM malawi_staging2
-WHERE Venue IN ('Home','Away') AND Result = 'Win'
+WHERE Venue IN ('Home','Away','Unknown') AND Result = 'Win'
 GROUP BY Venue, Result
 ORDER BY total_pertandingan DESC;
 ```
