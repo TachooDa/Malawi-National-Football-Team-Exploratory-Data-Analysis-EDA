@@ -203,7 +203,7 @@ FROM selisih_lawan;
 ### **Untuk Federasi Sepakbola Malawi:**
 1. **Penjadwalan strategis** pertandingan kandang vs lawan kuat
 2. **Investasi infrastruktur** untuk memperkuat home advantage
-3. **Program development** berdasarkan insight performa dekadal
+3. **Program development** berdasarkan insight performa dekade
 
 ---
 
