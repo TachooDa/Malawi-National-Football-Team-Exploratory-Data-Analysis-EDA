@@ -13,7 +13,7 @@ Analisis memanfaatkan **query SQL** dan **Common Table Expressions (CTE)** untuk
 | **Field** | **Deskripsi** |
 |-----------|---------------|
 | **Nama Tabel** | `malawi_staging2` |
-| **Total Record** | [`72` |
+| **Total Record** | [`72`] |
 | **Rentang Tanggal** | [`1957-01-01` - `2025-03-20`] |
 
 ### **Kolom Utama:**
